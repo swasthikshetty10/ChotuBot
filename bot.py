@@ -8,7 +8,7 @@ import traceback
 import random
 from itertools import cycle
 import asyncio
-from discord.ext import commands, tasks
+from discord.ext import commands, tasks 
 from pip._vendor import requests
 from PIL import Image
 from PIL import ImageDraw
@@ -408,6 +408,16 @@ async def animememe(ctx):
     em = discord.Embed(title = l[1], color = discord.Colour.green())
     em.set_image(url = l[0])
     await ctx.send(embed= em)
+
+
+@client.command(aliases = ['animewp','animewp1'])
+async def animewallpaper(ctx):
+    l = redditlink.randmeme('AnimeWallpapersSFW')
+    em = discord.Embed(title = l[1], color = discord.Colour.purple())
+    em.set_image(url = l[0])
+    await ctx.send(embed= em)
+
+
 
 
 

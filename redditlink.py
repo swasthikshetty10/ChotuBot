@@ -41,7 +41,7 @@ kills = [
     "is dead. How 🤷🏼‍♂️",
     "died of scurvy, eat oranges kids",
     "cranks up the music system only to realize the volume was at max and the song playing was Baby by Justin Beiber..",
-    
+    'died from watching to much of P**n ',
 ]
 def randmeme(meme_name):
     meme = reddit.subreddit(meme_name)
