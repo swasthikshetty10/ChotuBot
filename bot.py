@@ -443,7 +443,7 @@ async def dankmeme(ctx):
     await ctx.send(embed= em)
 @client.command(aliases = ['bot link','link'])  
 async def botlink(ctx):
-    await ctx.send('https://discord.com/api/oauth2/authorize?client_id=772026446527987722&permissions=0&scope=bot')
+    await ctx.send('https://discord.com/api/oauth2/authorize?client_id=772372193963016202&permissions=0&scope=bot')
 
 ######################################
 #######################################
