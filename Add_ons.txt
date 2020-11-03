@@ -1,11 +1,11 @@
 `{prefix_}story` - some cool stories!\n`{prefix_}whisper` - Tell something to your friend secretly!\n`{prefix_}` - !\n`{prefix_}beer` - have some beer!\n`{prefix_}` - !\n
 
+➣
 
 
 
-
-04123
-
+`{prefix_}` ➣ !\n
+videogamewallpapers
 
 
 `{prefix_}` - !\n

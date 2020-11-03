@@ -417,6 +417,20 @@ async def animewallpaper(ctx):
     em.set_image(url = l[0])
     await ctx.send(embed= em)
 
+@client.command(aliases = ['wp','wall'])
+async def wallpaper(ctx):
+    l = redditlink.randmeme('WQHD_Wallpaper')
+    em = discord.Embed(title = l[1], color = discord.Colour.purple())
+    em.set_image(url = l[0])
+    await ctx.send(embed= em)
+
+@client.command(aliases = ['gamewp','gamewall'])
+async def gamewallpaper(ctx):
+    l = redditlink.randmeme('videogamewallpapers')
+    em = discord.Embed(title = l[1], color = discord.Colour.purple())
+    em.set_image(url = l[0])
+    await ctx.send(embed= em)
+
 
 
 
@@ -899,8 +913,11 @@ async def warns(ctx , member : discord.Member):
 
 @client.command(aliases = ['command','commands'])
 async def _commands( ctx):
-            embed=discord.Embed(color =discord.Colour.purple() ,title='Bot Commands', description=f'\n\n`{prefix_}helpmemes`:joy: ➣ For meme commands!\n`{prefix_}helpmages`:camera_with_flash: ➣ For Fun Troll image commmands!\n`{prefix_}helpmod` :hammer_pick: ➣ For moderation commands\n`{prefix_}helpfun` :zany_face: ➣ For Epic fun commands\n`{prefix_}helpinfo` :information_source: ➣ For infomation commands\n`{prefix_}helpmusic`:musical_note:➣ For the music commands\n`{prefix_}helputils`:electric_plug: ➣ For random utility commands\n`{prefix_}helprandom`🃏➣ for random commands that dont fit in.\n`{prefix_}helpnsfw 🔞`➣ Adult content and more (use in NSFW channels only)')
+            embed=discord.Embed(color =discord.Colour.purple() ,title='Bot Commands', description=f'\n\n`{prefix_}helpmemes`:joy:  ➣ For meme commands!\n`{prefix_}helpimages`:camera_with_flash:  ➣ For Fun Troll image commmands!\n`{prefix_}posts`:frame_photo:  ➣ For Wallpapers and more!\n`{prefix_}helpmod` :hammer_pick:  ➣ For moderation commands\n`{prefix_}helpfun` :zany_face:  ➣ For Epic fun commands\n`{prefix_}helpinfo` :information_source:  ➣ For infomation commands\n`{prefix_}helpmusic`:musical_note:  ➣ For the music commands\n`{prefix_}helputils`:electric_plug:  ➣ For random utility commands\n`{prefix_}helprandom`🃏  ➣ for random commands that dont fit in.\n`{prefix_}helpnsfw 🔞`  ➣ Adult content and more (use in NSFW channels only)')
             await ctx.send(embed=embed)
+
+
+
 @client.command()
 async def helpmusic( ctx):
             embed=discord.Embed(title = "Coming Soon!" , color = discord.Colour.red())
@@ -952,6 +969,13 @@ async def helprandom( ctx):
 async def helpcurrency(ctx):
             embed=discord.Embed(color=discord.Colour.orange())
             embed=discord.Embed(title = 'Coming Soon!!')
+            await ctx.send(embed=embed)
+
+
+@client.command()
+async def helpposts(ctx):
+            embed=discord.Embed(color=discord.Colour.orange())
+            embed=discord.Embed(title = f':frame_photo: PhotoS FoR YoU :frame_photo: \n', description =f'`{prefix_}animewp` - some cool anime wallpapers for you!\n `{prefix_}wp` - 4k and HD wallpapers!\n `{prefix_}gamewp` - 4K Game wallpapers!\n')
             await ctx.send(embed=embed)
 
 
