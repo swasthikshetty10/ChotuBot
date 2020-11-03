@@ -913,7 +913,7 @@ async def warns(ctx , member : discord.Member):
 
 @client.command(aliases = ['command','commands'])
 async def _commands( ctx):
-            embed=discord.Embed(color =discord.Colour.purple() ,title='Bot Commands', description=f'\n\n`{prefix_}helpmemes`:joy:  ➣ For meme commands!\n`{prefix_}helpimages`:camera_with_flash:  ➣ For Fun Troll image commmands!\n`{prefix_}posts`:frame_photo:  ➣ For Wallpapers and more!\n`{prefix_}helpmod` :hammer_pick:  ➣ For moderation commands\n`{prefix_}helpfun` :zany_face:  ➣ For Epic fun commands\n`{prefix_}helpinfo` :information_source:  ➣ For infomation commands\n`{prefix_}helpmusic`:musical_note:  ➣ For the music commands\n`{prefix_}helputils`:electric_plug:  ➣ For random utility commands\n`{prefix_}helprandom`🃏  ➣ for random commands that dont fit in.\n`{prefix_}helpnsfw 🔞`  ➣ Adult content and more (use in NSFW channels only)')
+            embed=discord.Embed(color =discord.Colour.purple() ,title='Bot Commands', description=f'\n\n`{prefix_}helpmemes`:joy:  ➣ For meme commands!\n`{prefix_}helpimages`:camera_with_flash:  ➣ For Fun Troll image commmands!\n`{prefix_}helpposts`:frame_photo:  ➣ For Wallpapers and more!\n`{prefix_}helpmod` :hammer_pick:  ➣ For moderation commands\n`{prefix_}helpfun` :zany_face:  ➣ For Epic fun commands\n`{prefix_}helpinfo` :information_source:  ➣ For infomation commands\n`{prefix_}helpmusic`:musical_note:  ➣ For the music commands\n`{prefix_}helputils`:electric_plug:  ➣ For random utility commands\n`{prefix_}helprandom`🃏  ➣ for random commands that dont fit in.\n`{prefix_}helpnsfw 🔞`  ➣ Adult content and more (use in NSFW channels only)')
             await ctx.send(embed=embed)
 
 
