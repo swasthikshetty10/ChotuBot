@@ -1,1 +1,1 @@
-worker: python bvcbot.py
+worker: python bot.py
