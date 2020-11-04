@@ -8,3 +8,4 @@ requests
 captcha
 ffmpeg 
 wikipedia
+akinator.py

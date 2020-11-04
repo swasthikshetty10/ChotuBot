@@ -1,5 +1,6 @@
 import discord
 import json
+import akinator
 import os
 import re
 import time
@@ -1086,7 +1087,7 @@ async def helpnsfw(ctx):
             await ctx.send(embed=embed)
 
 
-client.run('NzcxNjgxMTc3OTM2NTkyOTA2.X5vqGQ.xg6B5W-DKR2kL2qxH0Zh0tUn8qg')
+client.run('NzcyMzcyMTkzOTYzMDE2MjAy.X55tqQ.erInlV7y4oL4k6kpKrxXctCyzv8')
 
 
 
