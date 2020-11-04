@@ -20,6 +20,7 @@ import wikipediaAPI
 prefix_ = '-'
 client = commands.Bot(command_prefix=prefix_)
 bot = client
+client.remove_command("help")
 
 @client.event
 async def on_connect():
@@ -910,9 +911,8 @@ async def warns(ctx , member : discord.Member):
 ########################################################
 
 
-
-@client.command(aliases = ['command','commands'])
-async def _commands( ctx):
+@client.group(invoke_without_command = True , aliases = ["commands" , "command"])
+async def help( ctx):
             embed=discord.Embed(color =discord.Colour.purple() ,title='Bot Commands', description=f'\n\n`{prefix_}helpmemes`:joy:  ➣ For meme commands!\n`{prefix_}helpimages`:camera_with_flash:  ➣ For Fun Troll image commmands!\n`{prefix_}helpposts`:frame_photo:  ➣ For Wallpapers and more!\n`{prefix_}helpmod` :hammer_pick:  ➣ For moderation commands\n`{prefix_}helpfun` :zany_face:  ➣ For Epic fun commands\n`{prefix_}helpinfo` :information_source:  ➣ For infomation commands\n`{prefix_}helpmusic`:musical_note:  ➣ For the music commands\n`{prefix_}helputils`:electric_plug:  ➣ For random utility commands\n`{prefix_}helprandom`🃏  ➣ for random commands that dont fit in.\n`{prefix_}helpnsfw 🔞`  ➣ Adult content and more (use in NSFW channels only)')
             await ctx.send(embed=embed)
 
@@ -924,7 +924,7 @@ async def helpmusic( ctx):
             await ctx.send(embed=embed)
 @client.command()
 async def helpmod( ctx):
-            embed=discord.Embed(title=':hammer_pick: Moderation Commands :hammer_pick:', description='\n\n`>clear` - This command clears a spesified  ammount of messages from a text channel\n`>mute` - Mutes the spesified player\n`>unmute` - This command unmutes a user.\n`>kick` - Kicks a spesified user\n`>ban` - This command bans a user.\n`>unban` - This command bans a user.\n`>lockdown` - This locksdown a certain channel.\n`>warn` - This warns the user. \n`>removewarn` - This removes a warn.\n`>warns` - This shows warns.\n`>lock` - locks a channel\n`>unlock` - unlocks a channel\n`>slowmode` - sets channel slowmode' , color = discord.Colour.dark_red())
+            embed=discord.Embed(title=':hammer_pick: Moderation Commands :hammer_pick:', description=f'\n\n`{prefix_}clear` - This command clears a spesified  ammount of messages from a text channel\n`{prefix_}mute` - Mutes the spesified player\n`{prefix_}unmute` - This command unmutes a user.\n`{prefix_}kick` - Kicks a spesified user\n`{prefix_}ban` - This command bans a user.\n`{prefix_}unban` - This command bans a user.\n`{prefix_}lockdown` - This locksdown a certain channel.\n`{prefix_}warn` - This warns the user. \n`{prefix_}removewarn` - This removes a warn.\n`{prefix_}warns` - This shows warns.\n`{prefix_}lock` - locks a channel\n`{prefix_}unlock` - unlocks a channel\n`{prefix_}slowmode` - sets channel slowmode' , color = discord.Colour.dark_red())
             await ctx.send(embed=embed)
 
 
