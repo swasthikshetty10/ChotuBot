@@ -26,9 +26,9 @@ client.remove_command("help")
 async def on_connect():
     print('Connected to Discord')
 
-status = cycle(['nothing!', 'with Life😪', 'Alone🚶   ....(i am single😭)','with my Ex😎','CORNHUB🌽','Some stupid commands'])
+status = cycle(['-help','nothing!', 'with Life😪', 'Alone🚶   ....(i am single😭)','with my Ex😎','CORNHUB🌽','Some stupid commands'])
 
-@tasks.loop(seconds=60)
+@tasks.loop(seconds=300)
 async def change_status():
     await bot.change_presence(activity=discord.Game(next(status)))
 
@@ -57,7 +57,7 @@ async def on_message(msg):
         if 'f' ==  msg.content:
             await msg.channel.send("f")
         if "chotu" == msg.content:
-            await msg.channel.send(f"Hey! i am Chotu Type {prefix_}help for commands")   
+            await msg.channel.send(f"Hey! I am Chotu Type {prefix_}help for commands")   
 
     await client.process_commands(msg)
     
@@ -195,8 +195,8 @@ async def worthless(ctx, user : discord.Member = None) :
 
 
 
-@client.command()
-async def stop(ctx, user : discord.Member = None) :
+@client.command(aliases= ['kq'])
+async def keepquiet(ctx, user : discord.Member = None) :
     if user == None:
         user = ctx.author
     stop = Image.open("stop.jpg")        
@@ -672,6 +672,88 @@ async def dalekping(ctx):
     ping = (time.monotonic() - before) * 1000
     await message.edit(content=f":ping_pong: WS: {before_ws}ms  |  REST: {int(ping)}ms")
 
+#######################################################################
+########################################GAMES
+#############################################GAMES ###############   
+##################################################GAMES###################
+
+
+@client.command()
+async def rps(ctx ,num : int = 0):
+    val = ['Rock','Paper','Scissor']
+    if num == 0:
+        em = discord.Embed(color = discord.Colour.dark_orange(), title = f"🔥*ROCK PAPER SCISSOR**🔥 \n\n TYPE :\nFor Rock✊   : `{prefix_}rps 1` \nFor Paper✋  : `{prefix_}rps 2` \nFor Seissor✌️ : `{prefix_}rps 3` ")
+
+        await ctx.send(embed = em)
+        return
+    elif num == 1 :
+        userval = 'Rock'
+    elif num == 2 :
+        userval = 'Paper'
+    elif num == 3 :
+        userval = 'Scissor'
+    else :
+        em = discord.Embed(color = discord.Colour.dark_orange(), title = f"🔥*ROCK PAPER SCISSOR**🔥 \n\n TYPE :\nFor Rock✊   : `{prefix_}rps 1` \nFor Paper✋  : `{prefix_}rps 2` \nFor Seissor✌️ : `{prefix_}rps 3` ")
+
+        await ctx.send(embed = em)
+        return
+    botval = random.choice(val)
+    if userval == 'Rock':
+        if botval == 'Rock':
+            em = discord.Embed(color = discord.Colour.orange(), title = "Tie!\n We Both slected Rock LoL\n 🤜🤛 ")
+            await ctx.send(embed = em)
+        elif botval == 'Paper':
+            em = discord.Embed(color = discord.Colour.orange(), title = "Lost!\n Looser i selected Paper😝\n 🤜🤚 ")
+            await ctx.send(embed = em)
+        elif botval == 'Scissor':
+            em = discord.Embed(color = discord.Colour.orange(), title = "Won!\n Hey you won i selected Scissor🖖\n 🤜✌️ ")
+            await ctx.send(embed = em)
+    elif userval == 'Paper':
+        if botval == 'Rock':
+            em = discord.Embed(color = discord.Colour.orange(), title = "Won!\n Hey you won i selected Rock👊 \n ✋🤛 ")
+            await ctx.send(embed = em)
+        elif botval == 'Paper':
+            em = discord.Embed(color = discord.Colour.orange(), title = "Tie!\n OOPS we both selected Paper😅 \n 🤚✋ ")
+            await ctx.send(embed = em)
+        elif botval == 'Scissor':
+            em = discord.Embed(color = discord.Colour.orange(), title ="Lost!\n Looser i selected Scissor😝\n 🤚✌️ ")
+            await ctx.send(embed = em)
+    elif userval == 'Scissor':
+        if botval == 'Rock':
+            em = discord.Embed(color = discord.Colour.orange(), title = "Lost!\n You lost! i selected selected Rock👊 \n ✌️🤛 ")
+            await ctx.send(embed = em)
+        elif botval == 'Paper':
+            em = discord.Embed(color = discord.Colour.orange(), title = "Won!!\n Congo you won i selected Paper\n ✌️✋ ")
+            await ctx.send(embed = em)
+        elif botval == 'Scissor':
+            em = discord.Embed(color = discord.Colour.orange(), title ="Tie!\n Two Scissors😲😅 \n ✌️✌️ ")
+            await ctx.send(embed = em)
+            
+        
+            
+
+
+    
+
+         
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ########################                    ########################
 #####################                              #####################
@@ -947,7 +1029,7 @@ async def helpinfo(ctx):
 #fun help command
 @client.command()
 async def helpfun( ctx):
-            embed=discord.Embed(color = discord.Colour.green(),title=':zany_face: Fun Commands :zany_face:', description=f'\n\n`{prefix_}kill` - use this to kill someone!\n`{prefix_}story` - some cool stories!\n`{prefix_}whisper` - Tell something to your friend secretly!\n`{prefix_}` - !\n`{prefix_}beer` - have some beer!\n`{prefix_}` - !\n`{prefix_}howgay` - use this to check gayness of your friend or test your self!\n`{prefix_}8ball` - This command you say _8ball then ask your question!\n`{prefix_}whisper` - lets you send a dm to someone.\n`{prefix_}mock` - lets you camelfy a word!\n`{prefix_}reverse` - lets you reverse a word!\n`{prefix_}password` - generates you a random password\n`{prefix_}sayname` - says the users name!')
+            embed=discord.Embed(color = discord.Colour.green(),title=':zany_face: Fun Commands :zany_face:', description=f'\n\n`{prefix_}kill` - use this to kill someone!\n`{prefix_}story` - some cool stories!\n`{prefix_}whisper` - Tell something to your friend secretly!\n`{prefix_}rps` - Play Rock Paper Scissor with me!\n`{prefix_}beer` - have some beer!\n`{prefix_}` - !\n`{prefix_}howgay` - use this to check gayness of your friend or test your self!\n`{prefix_}8ball` - This command you say _8ball then ask your question!\n`{prefix_}whisper` - lets you send a dm to someone.\n`{prefix_}mock` - lets you camelfy a word!\n`{prefix_}reverse` - lets you reverse a word!\n`{prefix_}password` - generates you a random password\n`{prefix_}sayname` - says the users name!')
             await ctx.send(embed=embed)
 
 @client.command()
@@ -958,7 +1040,7 @@ async def helputils( ctx):
 
 @client.command(aliases = ['helpimage'])
 async def helpimages( ctx):
-            embed=discord.Embed(title=':camera_with_flash: Images Commands :camera_with_flash: \n' f'`{prefix_}wanted` `{prefix_}gay` `{prefix_}slap` `{prefix_}fart` `{prefix_}smash` `{prefix_}stop` `{prefix_}worthless` `{prefix_}coffindance` `{prefix_}pee` `{prefix_}shit`  ',color = discord.Colour.blurple())
+            embed=discord.Embed(title=':camera_with_flash: Images Commands :camera_with_flash: \n' f'`{prefix_}wanted` `{prefix_}gay` `{prefix_}slap` `{prefix_}fart` `{prefix_}smash` `{prefix_}keepquiet` `{prefix_}worthless` `{prefix_}coffindance` `{prefix_}pee` `{prefix_}shit`  ',color = discord.Colour.blurple())
             await ctx.send(embed=embed)
 
 
@@ -1004,4 +1086,11 @@ async def helpnsfw(ctx):
             await ctx.send(embed=embed)
 
 
-client.run('NzcyMzcyMTkzOTYzMDE2MjAy.X55tqQ.erInlV7y4oL4k6kpKrxXctCyzv8')
+client.run('NzcxNjgxMTc3OTM2NTkyOTA2.X5vqGQ.xg6B5W-DKR2kL2qxH0Zh0tUn8qg')
+
+
+
+
+
+
+#NzcyMzcyMTkzOTYzMDE2MjAy.X55tqQ.erInlV7y4oL4k6kpKrxXctCyzv8
