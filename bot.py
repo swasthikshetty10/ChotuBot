@@ -27,7 +27,7 @@ client.remove_command("help")
 async def on_connect():
     print('Connected to Discord')
 
-status = cycle(['-help','nothing!', 'with Life😪', 'Alone🚶   ....(i am single😭)','with my Ex😎','CORNHUB🌽','Some stupid commands'])
+status = cycle(['-help','-music', 'with Life', 'Alone🚶','commands','-helpmusic','CORNHUB🌽','Stupid commands','in 69+ servers'])
 
 @tasks.loop(seconds=300)
 async def change_status():
@@ -1010,10 +1010,12 @@ async def help( ctx):
 
 
 
-@client.command()
+@client.command(aliases = ["play","music"])
 async def helpmusic( ctx):
-            embed=discord.Embed(title = "Coming Soon!" , color = discord.Colour.red())
-            await ctx.send(embed=embed)
+            embed1=discord.Embed(title = ":headphones:Music:" , description = "`@Chotu lyrics [song name]` - shows the lyrics to the currently-playing song \n `@Chotu nowplaying` - shows the song that is currently playing \n `@Chotu play <title|URL|subcommand>` - plays the provided song \n `@Chotu playlists` - shows the available playlists \n `@Chotu queue [pagenum]` - shows the current queue \n `@Chotu remove <position|ALL>` - removes a song from the queue \n `@Chotu search <query>` - searches Youtube for a provided query \n `@Chotu scsearch <query>` - searches Soundcloud for a provided query \n `@Chotu shuffle` - shuffles songs you have added \n `@Chotu skip` - votes to skip the current song \n",color = discord.Colour.dark_gold())
+            embed2 = discord.Embed(title = "🔊DJ:" , description ="`@Chotu forceremove <user>` - removes all entries by a user from the queue \n `@Chotu forceskip` - skips the current song \n `@Chotu movetrack` <from> <to> - move a track in the current queue to a different position \n `@Chotu pause` - pauses the current song \n `@Chotu playnext <title|URL>`- plays a single song next \n `@Chotu repeat [on|off]` - re-adds music to the queue when finished \n `@Chotu skipto <position>` - skips to the specified song  \n `@Chotu stop` - stops the current song and clears the queue \n `@Chotu volume [0-150]` - sets or shows volume \nFor additional help, contact !ΞPAX㋡#2215 " ,color = discord.Colour.dark_blue())
+            await ctx.send(embed=embed1)
+            await ctx.send(embed=embed2)
 @client.command()
 async def helpmod( ctx):
             embed=discord.Embed(title=':hammer_pick: Moderation Commands :hammer_pick:', description=f'\n\n`{prefix_}clear` - This command clears a spesified  ammount of messages from a text channel\n`{prefix_}mute` - Mutes the spesified player\n`{prefix_}unmute` - This command unmutes a user.\n`{prefix_}kick` - Kicks a spesified user\n`{prefix_}ban` - This command bans a user.\n`{prefix_}unban` - This command bans a user.\n`{prefix_}lockdown` - This locksdown a certain channel.\n`{prefix_}warn` - This warns the user. \n`{prefix_}removewarn` - This removes a warn.\n`{prefix_}warns` - This shows warns.\n`{prefix_}lock` - locks a channel\n`{prefix_}unlock` - unlocks a channel\n`{prefix_}slowmode` - sets channel slowmode' , color = discord.Colour.dark_red())
@@ -1084,6 +1086,7 @@ async def spam(ctx,num : int, *, msg):
 async def helpnsfw(ctx):
             embed=discord.Embed(color = discord.Colour.red())
             embed=discord.Embed(title=':sweat_drops: NSFW commands:sweat_drops: ', description= f'`{prefix_}reddt` or `{prefix_}r`- to get post from any subreddit eg : {prefix_}r boobs , {prefix_}r discord etc \n `{prefix_}plenty` or `{prefix_}nr`  - to get large no of memes or any subreddit content eg : {prefix_}plenty 20 desimemes!\n\n\n\n  some famous commands : `{prefix_}r boobs` `{prefix_}r pussy` `{prefix_}r booty` `{prefix_}r porn`')
+            
             await ctx.send(embed=embed)
 
 
