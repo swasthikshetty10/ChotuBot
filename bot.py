@@ -47,20 +47,25 @@ async def on_ready():
 
 @client.event
 async def on_message(msg):
-    #if ":" == msg.content[0] and ":" == msg.content[-1]:
-    #    emoji_name = msg.content[1:-1]
-    #    print(emoji_name)
-    #for emoji in msg.guild.emojis :
-    #    
-    #    if emoji_name == emoji:
-    #        await msg.channel.send(str(emoji))
-    #        await msg.delete()
-    #        break
-    #
-    #if 'F' or 'f' in msg.content:
-    #    await msg.channel.send("F")
-    #if "bvc" in msg.content:
-    #    await msg.channel.send("Yes i am BVC whats wrong?")   
+    channel = msg.channel
+    if msg.author == bot.user:
+        return
+    else:
+        if ":" == msg.content[0] and ":" == msg.content[-1]:
+            emoji_name = msg.content[1:-1]
+            print(emoji_name)
+        for emoji in msg.guild.emojis :
+            if emoji_name == emoji:
+               await msg.channel.send(str(emoji))
+               await msg.delete()
+               break
+
+        if 'F' ==  msg.content:
+            await msg.channel.send("F")
+        if 'f' ==  msg.content:
+            await msg.channel.send("f")
+        if "chotu" == msg.content:
+            await msg.channel.send(f"Hey! i am Chotu Type {prefix_}help for commands")   
 
     await client.process_commands(msg)
     
@@ -428,10 +433,22 @@ async def wallpaper(ctx):
 @client.command(aliases = ['gamewp','gamewall'])
 async def gamewallpaper(ctx):
     l = redditlink.randmeme('videogamewallpapers')
-    em = discord.Embed(title = l[1], color = discord.Colour.purple())
-    em.set_image(url = l[0])
-    await ctx.send(embed= em)
+    url = l[0]
 
+    if url[-4:] == ".jpg" :
+        em = discord.Embed(title = l[1], color = discord.Colour.green())
+        em.set_image(url = l[0])
+        await ctx.send(embed= em)
+        
+    elif url[-4:] == ".png" :
+        em = discord.Embed(title = l[1], color = discord.Colour.green())
+        em.set_image(url = l[0])
+        await ctx.send(embed= em)
+    
+    else:
+        em = discord.Embed(title = l[1], color = discord.Colour.red()) 
+        await ctx.send(embed= em)
+        await ctx.send(l[0])    
 
 
 
