@@ -51,15 +51,7 @@ async def on_message(msg):
     if msg.author == bot.user:
         return
     else:
-        if ":" == msg.content[0] and ":" == msg.content[-1]:
-            emoji_name = msg.content[1:-1]
-            print(emoji_name)
-        for emoji in msg.guild.emojis :
-            if emoji_name == emoji:
-               await msg.channel.send(str(emoji))
-               await msg.delete()
-               break
-
+        
         if 'F' ==  msg.content:
             await msg.channel.send("F")
         if 'f' ==  msg.content:
