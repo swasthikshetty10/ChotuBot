@@ -27,7 +27,7 @@ client.remove_command("help")
 async def on_connect():
     print('Connected to Discord')
 
-status = cycle(['-help','-music', 'with Life', 'Alone🚶','commands','-helpmusic','CORNHUB🌽','Stupid commands','in 69+ servers'])
+status = cycle(['-help','-music', 'with Life', 'Alone🚶','-commands','-helpmusic','Stupid commands','Music','in 69+ servers'])
 
 @tasks.loop(seconds=300)
 async def change_status():
