@@ -4,6 +4,7 @@ import akinator
 import os
 import re
 import time
+import math
 import datetime
 import traceback
 import random
@@ -993,6 +994,97 @@ async def warns(ctx , member : discord.Member):
         warnings.add_field(name = f"Warn {num}" , value = warn)
         num += 1
     await ctx.send(embed = warnings)
+###############################################     
+#################################################    
+###################################################   Utils utils utils 
+#######################################################  
+##########################################################
+intervals = (
+    ('years', 604800*52),
+    ('months', 604800*4),
+    ('weeks', 604800),  # 60 * 60 * 24 * 7
+    ('days', 86400),    # 60 * 60 * 24
+    ('hours', 3600),    # 60 * 60
+    ('minutes', 60),
+    ('seconds', 1),
+    )
+
+
+def display_time(seconds, granularity=2):
+    result = []
+
+    for name, count in intervals:
+        value = seconds // count
+        if value:
+            seconds -= value * count
+            if value == 1:
+                name = name.rstrip('s')
+            value = round(value)
+            result.append("{} {}".format(value, name))
+    return ', '.join(result[:granularity])
+
+
+
+
+@client.command(aliases=['thx', 'THX', 'thankyou'])
+async def thank(ctx,member:discord.Member):
+    if member == ctx.author:
+        return False
+    elif ctx.author.bot:
+        return False
+    with open('thank.json','r') as f:
+        thank = json.load(f)
+    if str(member.id) not in thank:
+        thank[str(member.id)] = {}
+        thank[str(member.id)]['tpoin'] = 1
+    else:
+        thank[str(member.id)]['tpoin'] += 1
+    with open("thank.json","w") as f:
+        json.dump(thank,f)
+    await ctx.send(f'You have thanked {member}')
+@client.command(aliases=['thxlb'])
+async def thxleaderboard(ctx, x=10):
+    with open('thank.json') as f:
+        thank = json.load(f)
+    leaderb = {}
+    total = []
+    for user in thank:
+        name = int(user)
+        
+        total_amt = thank[user]['tpoin']
+        leaderb[total_amt] = name
+        total.append(total_amt)
+    
+    total = sorted(total,reverse=True)
+    index = 1
+    em = discord.Embed(title=f'Top {x}', color=random.randint(0,0xFFFFF))
+    for amt in total:
+        check = []
+        id_ = leaderb[amt]
+        member = bot.get_user(id_)
+        name = member.name
+        id = member.id
+    if id in check:
+        pass
+    else:
+        em.add_field(name=f'{index}. {name}',value=f"Points : `{amt}` | ID: `{id}`",inline=False)
+        check.append(id)
+        index += 1
+    await ctx.send(embed=em)
+@client.command()
+async def checkthanks(ctx, member : discord.Member):
+    with open('thank.json') as f:
+        thank = json.load(f)
+    total_thanks = thank[str(member.id)]['tpoin']
+    embed = discord.Embed(
+        title = "{}'s total thanks!".format(member),
+        colour = discord.Colour.red(),
+        description = "The user currently has {} thanks.".format(total_thanks))
+    embed.set_footer(text=f'User ID: {member.id}')
+    await ctx.send(embed=embed)
+
+
+
 
 
 ###############################################     help
