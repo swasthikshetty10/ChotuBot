@@ -20,7 +20,7 @@ from io import BytesIO
 import wikipediaAPI
 
 prefix_ = '-'
-client = commands.Bot(command_prefix=prefix_)
+client = commands.Bot(command_prefix=('-','chotu ','@Chotu '))
 bot = client
 client.remove_command("help")
 
@@ -168,7 +168,7 @@ async def slap(ctx, user : discord.Member = None) :
     if user == None:
         user2 = ctx.author
     
-    slap = Image.open("slap.jpg")
+    slap = Image.open("images/slap.jpg")
             
     asset1 = user1.avatar_url_as(size = 256)
     asset2 = user2.avatar_url_as(size = 256)
@@ -177,25 +177,25 @@ async def slap(ctx, user : discord.Member = None) :
     pfp1  = Image.open(data1)
     pfp1 = pfp1.resize((72,72))
     slap.paste(pfp1,(131,11))
-    slap.save("slap1.jpg")
+    slap.save("images/slap1.jpg")
     pfp2  = Image.open(data2)
     pfp2 = pfp2.resize((72,72))
     slap.paste(pfp2,(11,33))
-    slap.save("slap1.jpg")
-    await ctx.send(file = discord.File("slap1.jpg"))
+    slap.save("images/slap1.jpg")
+    await ctx.send(file = discord.File("images/slap1.jpg"))
 
 @client.command()
 async def worthless(ctx, user : discord.Member = None) :
     if user == None:
         user = ctx.author
-    worthless = Image.open("worthless.jpg")        
+    worthless = Image.open("images/worthless.jpg")        
     asset = user.avatar_url_as(size = 128)
     data = BytesIO(await asset.read())
     pfp  = Image.open(data)
     pfp = pfp.resize((120,120))
     worthless.paste(pfp,(148,76))
-    worthless.save("gay1.jpg")
-    await ctx.send(file = discord.File("gay1.jpg"))
+    worthless.save("images/gay1.jpg")
+    await ctx.send(file = discord.File("images/gay1.jpg"))
 
 
 
@@ -203,54 +203,54 @@ async def worthless(ctx, user : discord.Member = None) :
 async def keepquiet(ctx, user : discord.Member = None) :
     if user == None:
         user = ctx.author
-    stop = Image.open("stop.jpg")        
+    stop = Image.open("images/stop.jpg")        
     asset = user.avatar_url_as(size = 128)
     data = BytesIO(await asset.read())
     pfp  = Image.open(data)
     pfp = pfp.resize((220,220))
     stop.paste(pfp,(695,42))
-    stop.save("gay1.jpg")
-    await ctx.send(file = discord.File("gay1.jpg"))
+    stop.save("images/gay1.jpg")
+    await ctx.send(file = discord.File("images/gay1.jpg"))
 
 
 @client.command()
 async def fart(ctx, user : discord.Member = None) :
     if user == None:
         user = ctx.author
-    fart = Image.open("fart.jpg")        
+    fart = Image.open("images/fart.jpg")        
     asset = user.avatar_url_as(size = 128)
     data = BytesIO(await asset.read())
     pfp  = Image.open(data)
     pfp = pfp.resize((200,200))
     fart.paste(pfp,(532,120))
-    fart.save("gay1.jpg")
-    await ctx.send(file = discord.File("gay1.jpg"))
+    fart.save("images/gay1.jpg")
+    await ctx.send(file = discord.File("images/gay1.jpg"))
 
 @client.command()
 async def pee(ctx, user : discord.Member = None) :
     if user == None:
         user = ctx.author
-    pee = Image.open("pee.jpg")        
+    pee = Image.open("images/pee.jpg")        
     asset = user.avatar_url_as(size = 128)
     data = BytesIO(await asset.read())
     pfp  = Image.open(data)
     pfp = pfp.resize((210,210))
     pee.paste(pfp,(432,61))
-    pee.save("gay1.jpg")
-    await ctx.send(file = discord.File("gay1.jpg"))
+    pee.save("images/gay1.jpg")
+    await ctx.send(file = discord.File("images/gay1.jpg"))
 
 @client.command()
 async def coffindance(ctx, user : discord.Member = None) :
     if user == None:
         user = ctx.author
-    pee = Image.open("coffindance.jpg")        
+    pee = Image.open("images/coffindance.jpg")        
     asset = user.avatar_url_as(size = 128)
     data = BytesIO(await asset.read())
     pfp  = Image.open(data)
     pfp = pfp.resize((127,127))
     pee.paste(pfp,(196,32))
-    pee.save("gay1.jpg")
-    await ctx.send(file = discord.File("gay1.jpg"))
+    pee.save("images/gay1.jpg")
+    await ctx.send(file = discord.File("images/gay1.jpg"))
 
 
 
@@ -261,7 +261,7 @@ async def smash(ctx, user : discord.Member = None) :
     user1 = ctx.author
     user2 = user
     
-    smash = Image.open("smash.jpg")
+    smash = Image.open("images/smash.jpg")
             
     asset1 = user1.avatar_url_as(size = 256)
     asset2 = user2.avatar_url_as(size = 256)
@@ -270,12 +270,12 @@ async def smash(ctx, user : discord.Member = None) :
     pfp1  = Image.open(data1)
     pfp1 = pfp1.resize((91,91))
     smash.paste(pfp1,(122,167))
-    smash.save("slap1.jpg")
+    smash.save("images/slap1.jpg")
     pfp2  = Image.open(data2)
     pfp2 = pfp2.resize((88,88))
     smash.paste(pfp2,(326,290))
     smash.save("slap1.jpg")
-    await ctx.send(file = discord.File("slap1.jpg"))
+    await ctx.send(file = discord.File("images/slap1.jpg"))
 
 
 
@@ -283,29 +283,29 @@ async def smash(ctx, user : discord.Member = None) :
 async def wanted(ctx, user : discord.Member = None) :
     if user == None:
         user = ctx.author
-    wanted = Image.open("wantted.jpg")
+    wanted = Image.open("images/wantted.jpg")
             
     asset = user.avatar_url_as(size = 128)
     data = BytesIO(await asset.read())
     pfp  = Image.open(data)
     pfp = pfp.resize((300,300))
     wanted.paste(pfp,(81,224))
-    wanted.save("profile.jpg")
-    await ctx.send(file = discord.File("profile.jpg"))
+    wanted.save("images/profile.jpg")
+    await ctx.send(file = discord.File("images/profile.jpg"))
 
 @client.command()
 async def gay(ctx, user : discord.Member = None) :
     if user == None:
         user = ctx.author
-    gay = Image.open("gay.jpg")
+    gay = Image.open("images/gay.jpg")
             
     asset = user.avatar_url_as(size = 128)
     data = BytesIO(await asset.read())
     pfp  = Image.open(data)
     pfp = pfp.resize((199,199))
     gay.paste(pfp,(32,96))
-    gay.save("gay1.jpg")
-    await ctx.send(file = discord.File("gay1.jpg"))
+    gay.save("images/gay1.jpg")
+    await ctx.send(file = discord.File("images/gay1.jpg"))
 
 
 #### #### #### ##### #####       > MEME <         ##### ##### #### #### ####    
