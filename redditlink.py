@@ -1,9 +1,9 @@
 import praw
 import random
-reddit = praw.Reddit(client_id = "gUJfYY0AI_ZIng", 
-                    client_secret = "02D7j0I_adTS8iI4xTbpUoxDnYeU-Q",
-                    username = "admin_10902",
-                    password = "@Admin_10902",
+reddit = praw.Reddit(client_id = "api-client-id-here", 
+                    client_secret = "Reddit-api-client_secret",
+                    username = "(reddit)username",
+                    password = "(reddit)passwed",
                     user_agent = 'pythonbot')
 
 
