@@ -7,6 +7,9 @@ reddit = praw.Reddit(client_id = "api-client-id-here",
                     user_agent = 'pythonbot')
 
 
+
+
+
 #MEME #MEME #MEME #MEME #MEME #MEME #MEME #MEME #MEME #MEME   #MEME #MEME #MEME #MEME #MEME                
 
 kills = [
