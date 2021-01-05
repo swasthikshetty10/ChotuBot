@@ -1,6 +1,6 @@
 #DiscordBot
 
-Thsi is a cool discord bot projet 
+Thsi is a cool discord bot  
 cool!
  
 ########
